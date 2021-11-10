@@ -15,17 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guests.welcome');
 });
 
 Auth::routes();
+
+Route::middleware('auth')->get('/home',function(){
+    return view('admin.home');
+});
 
 Route::middleware('auth')
 ->namespace('Admin')
 ->name('admin.')
 ->prefix('admin')
 ->group(function(){
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('/comics','ComicController');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');

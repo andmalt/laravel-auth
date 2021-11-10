@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+
+                    <a href="{{ route('admin.comics.index') }}" class="btn btn-dark m-2">Entra nella area personale</a>
                 </div>
             </div>
         </div>
