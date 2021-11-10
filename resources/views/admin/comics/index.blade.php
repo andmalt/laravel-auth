@@ -18,7 +18,7 @@
                     @foreach ($comics as $comic)
                     <tr>
                         <td scope="row"></td>
-                        <td><a href="{{ route('comics.show', $comic->id )}}" class="link_name">{{strtoupper($comic->title)}}</a></td>
+                        <td><a href="{{ route('admin.comics.show', $comic->id )}}" class="link_name">{{strtoupper($comic->title)}}</a></td>
                         <td>{{$comic->author}}</td>
                         <td>{{date("d-m-Y",strtotime($comic->publication_date))}}</td>
                     </tr> 
